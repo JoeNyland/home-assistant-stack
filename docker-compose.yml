@@ -10,8 +10,5 @@ services:
     labels:
       com.centurylinklabs.watchtower.monitor-only: true
     volumes:
-      - data:/config
+      - /tank/docker/home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
-
-volumes:
-  data:
