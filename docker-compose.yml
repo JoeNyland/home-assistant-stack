@@ -9,6 +9,9 @@ services:
     network_mode: host
     labels:
       com.centurylinklabs.watchtower.monitor-only: true
+      traefik.enable: true
+      traefik.http.services.home-assistant.loadbalancer.server.port: 8123
+      traefik.http.routers.home-assistant.rule: Host(`homeassistant`) || Host(`ha`)
     volumes:
       - /containers/home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
