@@ -13,7 +13,9 @@ services:
       traefik.http.routers.home-assistant.middlewares: home-assistant-ipallowlist
       traefik.http.middlewares.home-assistant-ipallowlist.ipallowlist.sourcerange: >
         2a00:23c8:bda0:b310::/64,
-        10.10.0.0/16
+        2a00:23c8:bda0:b311::/64,
+        10.10.0.0/16,
+        10.11.0.0/16
     volumes:
       - /containers/home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
