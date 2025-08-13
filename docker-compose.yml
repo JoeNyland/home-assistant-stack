@@ -9,7 +9,6 @@ services:
       traefik.enable: true
       traefik.http.services.home-assistant.loadbalancer.server.port: 8123
       traefik.http.routers.home-assistant.rule: Host(`homeassistant`)
-      traefik.http.routers.home-assistant.middlewares: trusted-ipallowlist
     volumes:
       - /containers/home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
